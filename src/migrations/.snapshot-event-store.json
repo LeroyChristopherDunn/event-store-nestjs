@@ -62,6 +62,42 @@
       "name": "event",
       "indexes": [
         {
+          "columnNames": [
+            "created_date"
+          ],
+          "composite": false,
+          "keyName": "event_created_date_index",
+          "primary": false,
+          "unique": false
+        },
+        {
+          "columnNames": [
+            "version"
+          ],
+          "composite": false,
+          "keyName": "event_version_index",
+          "primary": false,
+          "unique": false
+        },
+        {
+          "columnNames": [
+            "aggregate"
+          ],
+          "composite": false,
+          "keyName": "event_aggregate_index",
+          "primary": false,
+          "unique": false
+        },
+        {
+          "columnNames": [
+            "type"
+          ],
+          "composite": false,
+          "keyName": "event_type_index",
+          "primary": false,
+          "unique": false
+        },
+        {
           "keyName": "PRIMARY",
           "columnNames": [
             "id"

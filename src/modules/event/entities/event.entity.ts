@@ -1,4 +1,4 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { Entity, Index, PrimaryKey, Property } from '@mikro-orm/core';
 
 export enum EventProjection {}
 
@@ -11,16 +11,20 @@ export class Event {
   @PrimaryKey({ autoincrement: true })
   id: number;
 
+  @Index()
   @Property({ onCreate: () => new Date() })
   createdDate: Date;
 
+  @Index()
   @Property()
   version: number;
 
   @Property()
+  @Index()
   aggregate: string;
 
   @Property()
+  @Index()
   type: string;
 
   @Property({ type: 'json' })
