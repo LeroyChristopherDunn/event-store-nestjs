@@ -11,6 +11,7 @@ import { EventQueryDto } from './dto/event-query.dto';
 import { EventUpdateDto } from './dto/event-update.dto';
 import { EventMapper } from './event.mapper';
 import { MikroOrmEntityService } from '../../mikro-orm-entity.service';
+import { Paginated } from '../../pagination.utils';
 
 @Injectable()
 export class EventService extends MikroOrmEntityService<
@@ -26,6 +27,29 @@ export class EventService extends MikroOrmEntityService<
     repository: EntityRepository<Event>,
   ) {
     super(mapper, repository, DEFAULT_PROJECTION);
+  }
+
+  async find(
+    id: any,
+    projections: EventProjection[] = this.defaultProjection,
+  ): Promise<Event | null> {
+    const event = await super.find(id, projections);
+    this.parseEventPayload(event);
+    return event;
+  }
+
+  async findAll(
+    query: EventQueryDto,
+    projections: EventProjection[] = this.defaultProjection,
+  ): Promise<Paginated<Event>> {
+    const events = await super.findAll(query, projections);
+    events.items.forEach((event) => this.parseEventPayload(event));
+    return events;
+  }
+
+  private parseEventPayload(event?: Event) {
+    const isString = (s) => typeof s === 'string' || s instanceof String;
+    if (isString(event?.payload)) event.payload = JSON.parse(event.payload);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
