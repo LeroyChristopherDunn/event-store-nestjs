@@ -1,0 +1,78 @@
+{
+  "namespaces": [],
+  "tables": [
+    {
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int",
+          "unsigned": true,
+          "autoincrement": true,
+          "primary": true,
+          "nullable": false,
+          "mappedType": "integer"
+        },
+        "created_date": {
+          "name": "created_date",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 0,
+          "mappedType": "datetime"
+        },
+        "version": {
+          "name": "version",
+          "type": "int",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "integer"
+        },
+        "aggregate": {
+          "name": "aggregate",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "string"
+        },
+        "type": {
+          "name": "type",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "string"
+        },
+        "payload": {
+          "name": "payload",
+          "type": "json",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "json"
+        }
+      },
+      "name": "event",
+      "indexes": [
+        {
+          "keyName": "PRIMARY",
+          "columnNames": [
+            "id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {}
+    }
+  ]
+}

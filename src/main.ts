@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as yaml from 'yaml';
 import * as fs from 'fs';
