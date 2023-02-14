@@ -12,7 +12,7 @@ Simple REST event store built with Nest framework.
 (100k events ~ 30mb in json format)
   
 **Insert (no transactions or bulk operations)**  
-100k events = 21s = 0.21ms / event
+100k events = 4.2mins ~ 2.1ms / event
 
 **Query (page size = 500)**  
 100k events = 16s = 0.16ms / event
