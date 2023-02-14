@@ -12,7 +12,7 @@ const mikroOrmLogger = new Logger(`MikroORM`);
   imports: [
     MikroOrmModule.forRoot({
       ...(ENVIRONMENT === 'test' ? MICRO_ORM_TEST_CONFIG : MIKRO_ORM_CONFIG),
-      logger: (message: string) => mikroOrmLogger.log(message),
+      logger: (message: string) => mikroOrmLogger.verbose(message),
     }),
     EventModule,
   ],

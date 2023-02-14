@@ -18,7 +18,7 @@ export const MIKRO_ORM_CONFIG: MikroOrmModuleSyncOptions = {
   dbName: (process.env.EVENT_STORE_MIKRO_ORM_DB_NAME as any) || ':memory:',
   user: (process.env.EVENT_STORE_MIKRO_ORM_USER as any) || '',
   password: (process.env.EVENT_STORE_MIKRO_ORM_PASSWORD as any) || '',
-  debug: (process.env.EVENT_STORE_MIKRO_ORM_DEBUG as any) || true,
+  debug: (process.env.EVENT_STORE_MIKRO_ORM_DEBUG as any) || false,
 };
 
 export const MICRO_ORM_TEST_CONFIG: MikroOrmModuleSyncOptions = {
@@ -28,7 +28,7 @@ export const MICRO_ORM_TEST_CONFIG: MikroOrmModuleSyncOptions = {
   dbName: (process.env.TEST_MIKRO_ORM_DB_NAME as any) || ':memory:',
   user: (process.env.TEST_MIKRO_ORM_USER as any) || '',
   password: (process.env.TEST_MIKRO_ORM_PASSWORD as any) || '',
-  debug: (process.env.TEST_MIKRO_ORM_DEBUG as any) || true,
+  debug: (process.env.TEST_MIKRO_ORM_DEBUG as any) || false,
   allowGlobalContext: true,
 };
 

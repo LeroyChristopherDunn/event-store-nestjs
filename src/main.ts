@@ -33,6 +33,7 @@ export const createApp = async (expressInstance?: any) => {
   const app = await NestFactory.create(
     AppModule,
     expressInstance ? new ExpressAdapter(expressInstance) : undefined,
+    { logger: ['error', 'warn', 'log'] }, //todo logging levels don't work
   );
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
