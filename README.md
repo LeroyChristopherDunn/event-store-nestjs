@@ -1,7 +1,8 @@
 
 ## Description
 
-Simple REST event store built with Nest framework.  
+Simple REST event store built with Nest framework.
+  
 [Event store](https://www.eventstore.com/event-sourcing)  
 [Nest framework](https://github.com/nestjs/nest)
 
